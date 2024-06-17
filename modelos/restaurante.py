@@ -1,4 +1,4 @@
-from avaliacao import Avaliacao
+from modelos.avaliacao import Avaliacao
 
 class Restaurante:
     restaurantes = []
