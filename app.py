@@ -5,9 +5,9 @@ from modelos.restaurante import Restaurante
 class ProgramaExpresso:
     def __init__(self):
         self.restaurantes = [
-            Restaurante("Bombaxa do boi gordo", "Churrascaria"),
-            Restaurante("WiskyDan", "Bebidas"),
-            Restaurante("Recanto Banha boa", "Pastelaria")
+            Restaurante("Veneza", "Comida Italiana"),
+            Restaurante("Pedra Chata", "Buffet Livre"),
+            Restaurante("Banha Banhenta", "Petiscaria")
         ]
         self.restaurantes[0].alternar_status()
 
@@ -27,9 +27,7 @@ class ProgramaExpresso:
         print()
 
     def escolher_opcoes(self):
-        self.mostrar_subtitulo("""
-█▀█ █▀▀ █▀ ▀█▀ ▄▀█ █░█ █▀█ ▄▀█ █▄░█ ▀█▀ █▀▀   █▀▀ ▀▄▀ █▀█ █▀█ █▀▀ █▀ █▀
-█▀▄ ██▄ ▄█ ░█░ █▀█ █▄█ █▀▄ █▀█ █░▀█ ░█░ ██▄   ██▄ █░█ █▀▀ █▀▄ ██▄ ▄█ ▄█""")
+        self.mostrar_subtitulo("""ℜ𝔢𝔰𝔱𝔞𝔲𝔯𝔞𝔫𝔱𝔢 𝔈𝔵𝔭𝔯𝔢𝔰𝔰𝔬 𝔏𝔲𝔠𝔞𝔰 & 𝔍𝔬𝔞̃𝔬""")
         print("1 - Cadastrar restaurante")
         print("2 - Listar restaurantes")
         print("3 - Ativar/Desativar restaurante")
