@@ -1,5 +1,6 @@
 from modelos.avaliacao import Avaliacao
 
+
 class Restaurante:
     restaurantes = []
 
@@ -17,7 +18,8 @@ class Restaurante:
     def listar_restaurantes(cls):
         print(f'Nome do Restaurante | Categoria | Status')
         for restaurante in cls.restaurantes:
-            print(f'{restaurante.nome.ljust(20)}|{restaurante.categoria.ljust(20)}|{"Avaliação".ljust(20)}|{restaurante.ativo}')
+            print(f'{restaurante.nome.ljust(20)}|{restaurante.categoria.ljust(20)}|{
+                  "Avaliação".ljust(20)}|{restaurante.ativo}')
 
     @property
     def ativo(self):
