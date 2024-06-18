@@ -16,10 +16,11 @@ class Restaurante:
 
     @classmethod
     def listar_restaurantes(cls):
-        print(f'Nome do Restaurante | Categoria | Status')
+        print(
+            f'Nome do Restaurante       | Categoria           | Avaliação          | Status')
         for restaurante in cls.restaurantes:
-            print(f'{restaurante.nome.ljust(20)}|{restaurante.categoria.ljust(20)}|{
-                  "Avaliação".ljust(20)}|{restaurante.ativo}')
+            print(f'{restaurante.nome.ljust(25)}|{restaurante.categoria.ljust(20)}|'
+                  f'{str(restaurante.media_avaliacoes).ljust(20)}|{restaurante.ativo}')
 
     @property
     def ativo(self):
@@ -41,3 +42,10 @@ class Restaurante:
         quantidade_de_notas = len(self._avaliacao)
         media = round(soma_das_notas / quantidade_de_notas, 1)
         return media
+
+    @classmethod
+    def encontrar_restaurante(cls, nome):
+        for restaurante in cls.restaurantes:
+            if restaurante.nome.lower() == nome.lower():
+                return restaurante
+        return None
