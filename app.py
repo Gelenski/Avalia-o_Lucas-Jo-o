@@ -5,14 +5,13 @@ from modelos.restaurante import Restaurante
 class ProgramaExpresso:
     def __init__(self):
         self.restaurantes = [
-            Restaurante('Bombaxa do boi gordo', 'Churrascaria'),
-            Restaurante('WiskyDan', 'Bebidas'),
-            Restaurante('Recanto Banha boa', 'Pastelaria')
+            Restaurante("Bombaxa do boi gordo", "Churrascaria"),
+            Restaurante("WiskyDan", "Bebidas"),
+            Restaurante("Recanto Banha boa", "Pastelaria")
         ]
         self.restaurantes[0].alternar_status()
 
     def finalizar_app(self):
-        os.system("clear")
         os.system("cls")
         print("Finalizando o app\n")
 
@@ -20,17 +19,17 @@ class ProgramaExpresso:
         input("Digite uma tecla para voltar ao menu principal: ")
 
     def mostrar_subtitulo(self, texto):
-        os.system("clear")
-        linha = '*' * (len(texto))
+        os.system("cls")
+        linha = "*" * (len(texto))
         print(linha)
         print(texto)
         print(linha)
         print()
 
     def escolher_opcoes(self):
-        self.mostrar_subtitulo('''
+        self.mostrar_subtitulo("""
 █▀█ █▀▀ █▀ ▀█▀ ▄▀█ █░█ █▀█ ▄▀█ █▄░█ ▀█▀ █▀▀   █▀▀ ▀▄▀ █▀█ █▀█ █▀▀ █▀ █▀
-█▀▄ ██▄ ▄█ ░█░ █▀█ █▄█ █▀▄ █▀█ █░▀█ ░█░ ██▄   ██▄ █░█ █▀▀ █▀▄ ██▄ ▄█ ▄█''')
+█▀▄ ██▄ ▄█ ░█░ █▀█ █▄█ █▀▄ █▀█ █░▀█ ░█░ ██▄   ██▄ █░█ █▀▀ █▀▄ ██▄ ▄█ ▄█""")
         print("1 - Cadastrar restaurante")
         print("2 - Listar restaurantes")
         print("3 - Ativar/Desativar restaurante")
@@ -43,7 +42,7 @@ class ProgramaExpresso:
         self.voltar_menu_principal()
 
     def listar_restaurantes(self):
-        self.mostrar_subtitulo('Listando os Restaurantes'.ljust(20))
+        self.mostrar_subtitulo("Listando os Restaurantes".ljust(20))
         Restaurante.listar_restaurantes()
         self.voltar_menu_principal()
 
@@ -57,7 +56,7 @@ class ProgramaExpresso:
         if restaurante:
             restaurante.alternar_status()
             print(f"O restaurante {restaurante.nome} foi {
-                  'ativado' if restaurante._ativo else 'desativado'} com sucesso.")
+                  "ativado" if restaurante._ativo else "desativado"} com sucesso.")
         else:
             print("O restaurante não foi encontrado.")
 
@@ -95,14 +94,15 @@ class ProgramaExpresso:
         self.mostrar_subtitulo(
             "Média de Avaliações dos Restaurantes\n".ljust(20))
         for restaurante in Restaurante.restaurantes:
-            print(f"{restaurante.nome}    Média de estrelas: {
+            print(f"{restaurante.nome.ljust(25)}  |  Média de avaliações: {
                   restaurante.media_avaliacoes}")
         self.voltar_menu_principal()
 
     def cadastrar_novo_restaurante(self):
+        os.system("cls")
         nome_do_restaurante = input("Digite o nome do novo restaurante: ")
-        categoria = input(f'Digite a categoria do restaurante {
-                          nome_do_restaurante}: ')
+        categoria = input(f"Digite a categoria do restaurante {
+                          nome_do_restaurante}: ")
         Restaurante(nome_do_restaurante, categoria)
         print(f"Você cadastrou o restaurante: {nome_do_restaurante}")
 
@@ -128,7 +128,7 @@ class ProgramaExpresso:
                     break
                 else:
                     self.opcao_invalida()
-            except ValueError:
+            except:
                 print("Por favor, digite um número válido.")
 
 
