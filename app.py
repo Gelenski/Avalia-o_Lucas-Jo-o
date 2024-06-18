@@ -7,7 +7,8 @@ class ProgramaExpresso:
         self.restaurantes = [
             Restaurante("Veneza", "Comida Italiana"),
             Restaurante("Pedra Chata", "Buffet Livre"),
-            Restaurante("Banha Banhenta", "Petiscaria")
+            Restaurante("Banha Banhenta", "Petiscaria"),
+            Restaurante("Pura Bucha", "Churrascaria")
         ]
         self.restaurantes[0].alternar_status()
 
