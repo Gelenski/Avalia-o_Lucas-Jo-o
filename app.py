@@ -2,7 +2,7 @@ import os
 from modelos.restaurante import Restaurante
 
 
-class ProgramaExpresso:
+class Programa:
     def __init__(self):
         self.restaurantes = [
             Restaurante("Veneza", "Comida Italiana"),
@@ -133,5 +133,5 @@ class ProgramaExpresso:
 
 
 if __name__ == "__main__":
-    programa = ProgramaExpresso()
+    programa = Programa()
     programa.main()
