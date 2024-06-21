@@ -50,4 +50,3 @@ class Restaurante:
         for restaurante in cls.restaurantes:
             if restaurante.nome.lower() == nome.lower():
                 return restaurante
-        return None

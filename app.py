@@ -10,6 +10,7 @@ class ProgramaExpresso:
             Restaurante("Banha Banhenta", "Petiscaria"),
             Restaurante("Pura Bucha", "Churrascaria")
         ]
+        # * Alternando estado para exemplo.
         self.restaurantes[0].alternar_status()
 
     def finalizar_app(self):
