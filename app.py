@@ -55,8 +55,8 @@ class Programa:
 
         if restaurante:
             restaurante.alternar_status()
-            print(f"O restaurante {restaurante.nome} foi {
-                  "ativado" if restaurante._ativo else "desativado"} com sucesso.")
+            print(f"O restaurante {restaurante.nome} foi {'ativado' if restaurante._ativo else 'desativado'} com "
+                  f"sucesso.")
         else:
             print("O restaurante não foi encontrado.")
 
@@ -78,8 +78,7 @@ class Programa:
                         input("Digite uma nota de 1 a 5 para avaliar este restaurante: "))
                     if 1 <= nota <= 5:
                         restaurante.receber_avaliacao(cliente, nota)
-                        print(f"Você avaliou o restaurante {
-                              nome_restaurante} com a nota {nota}.")
+                        print(f"Você avaliou o restaurante {nome_restaurante} com a nota {nota}.")
                         break
                     else:
                         print("Por favor, digite uma nota válida (entre 1 e 5).")
@@ -94,15 +93,13 @@ class Programa:
         self.mostrar_subtitulo(
             "Média de Avaliações dos Restaurantes\n".ljust(20))
         for restaurante in Restaurante.restaurantes:
-            print(f"{restaurante.nome.ljust(25)}  |  Média de avaliações: {
-                  restaurante.media_avaliacoes}")
+            print(f"{restaurante.nome.ljust(25)}  |  Média de avaliações: {restaurante.media_avaliacoes}")
         self.voltar_menu_principal()
 
     def cadastrar_novo_restaurante(self):
         os.system("cls")
         nome_do_restaurante = input("Digite o nome do novo restaurante: ")
-        categoria = input(f"Digite a categoria do restaurante {
-                          nome_do_restaurante}: ")
+        categoria = input(f"Digite a categoria do restaurante {nome_do_restaurante}: ")
         Restaurante(nome_do_restaurante, categoria)
         print(f"Você cadastrou o restaurante: {nome_do_restaurante}")
 
