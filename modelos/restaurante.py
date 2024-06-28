@@ -21,7 +21,7 @@ class Restaurante:
         print(
             f'Nome do Restaurante      | Categoria          | Avaliação         | Status')
         for restaurante in cls.restaurantes:
-            print(f'{restaurante.nome.ljust(25)}|{restaurante.categoria.ljust(20)}|'
+            print(f'{restaurante.nome.ljust(26)}|{restaurante.categoria.ljust(20)}|'
                   f'{str(restaurante.media_avaliacoes).ljust(19)}| {restaurante.ativo}')
 
     @property

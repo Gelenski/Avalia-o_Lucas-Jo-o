@@ -10,8 +10,13 @@ class Programa:
             Restaurante("Banha Banhenta", "Petiscaria"),
             Restaurante("Pura Bucha", "Churrascaria")
         ]
-        # * Alternando estado para exemplo.
+        # * Exemplos.
         self.restaurantes[0].alternar_status()
+        self.restaurantes[0].receber_avaliacao("João", 3)
+        self.restaurantes[0].receber_avaliacao("Paulo", 5)
+        self.restaurantes[0].receber_avaliacao("Daniel", 2)
+        self.restaurantes[0].receber_avaliacao("Lucas", 3.6)
+
 
     def finalizar_app(self):
         os.system("cls")
@@ -34,8 +39,8 @@ class Programa:
         print("2 - Listar restaurantes")
         print("3 - Ativar/Desativar restaurante")
         print("4 - Avaliar Restaurante")
-        print("5 - Ver Média de Avaliações")
-        print("6 - Sair\n")
+        # print("5 - Ver Média de Avaliações")
+        print("5 - Sair\n")
 
     def opcao_invalida(self):
         self.mostrar_subtitulo("Opção inválida\n".ljust(20))
@@ -89,12 +94,12 @@ class Programa:
 
         self.voltar_menu_principal()
 
-    def ver_media_avaliacoes(self):
-        self.mostrar_subtitulo(
-            "Média de Avaliações dos Restaurantes\n".ljust(20))
-        for restaurante in Restaurante.restaurantes:
-            print(f"{restaurante.nome.ljust(25)}  |  Média de avaliações: {restaurante.media_avaliacoes}")
-        self.voltar_menu_principal()
+    # def ver_media_avaliacoes(self):
+    #     self.mostrar_subtitulo(
+    #         "Média de Avaliações dos Restaurantes\n".ljust(20))
+    #     for restaurante in Restaurante.restaurantes:
+    #         print(f"{restaurante.nome.ljust(25)}  |  Média de avaliações: {restaurante.media_avaliacoes}")
+    #     self.voltar_menu_principal()
 
     def cadastrar_novo_restaurante(self):
         os.system("cls")
@@ -117,9 +122,9 @@ class Programa:
                     self.alternar_estado_restaurante()
                 elif opcao_digitada == 4:
                     self.avaliacao()
+                # elif opcao_digitada == 5:
+                #     self.ver_media_avaliacoes()
                 elif opcao_digitada == 5:
-                    self.ver_media_avaliacoes()
-                elif opcao_digitada == 6:
                     print("Você escolheu sair do aplicativo\n")
                     self.finalizar_app()
                     break
